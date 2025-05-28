@@ -29,8 +29,47 @@
             </div>
 
         </div>
-        <div class="mb-4">
+        <div class="grid grid-cols-3 gap-4 mb-4">
             <x-toggle label="Notifikasi" :initial="true" />
+            <x-input-form id="default" label="Default" />
+            <x-input-form id="tooltip" label="With Tooltip" tooltip="Ini tooltip info" />
+
+            <x-input-form id="mandatory" label="Mandatory" required />
+
+            <x-input-form id="prefix" label="With Prefix" prefix="USD" />
+
+            <x-input-form id="suffix" label="With Suffix" suffix="%" />
+
+            <x-input-form id="placeholder" label="With Placeholder" placeholder="Something cool..." />
+
+            <x-input-form id="icon" label="With Icon" 
+            {{-- :icon="view('components.icons.edit')"  --}}
+            />
+
+            <x-input-form id="support" label="With Support Text" supportText="Supporting text goes here!" />
+
+            <x-input-form id="search" label="Search" type="search" 
+            {{-- :icon="view('components.icons.search')"  --}}
+            />
+
+            <x-input-form id="small" label="Small" size="small" class="text-sm" />
+            <x-input-form id="default" label="Default" size="default" />
+            <x-input-form id="large" label="Large" size="large" class="text-lg" />
+
+            <x-input-form id="disabled" label="Disabled" placeholder="Disabled..." disabled />
+            <x-input-form id="error" label="Error" state="error" />
+            <x-input-form id="success" label="Success" state="success" />
+
+            <x-select
+                name="hewan_qurban"
+                label="Hewan Qurban"
+                :options="['sapi' => 'Sapi', 'kambing' => 'Kambing']"
+                wireModel="hewan_qurban"
+                required
+            />
+
+            <x-form.checkbox name="minta_bagian" label="Minta Bagian Daging" wireModel="minta_bagian" />
+
         </div>
         <!-- Cards -->
         <div class="grid grid-cols-12 gap-6">

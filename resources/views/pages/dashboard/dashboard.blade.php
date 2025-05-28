@@ -29,7 +29,9 @@
             </div>
 
         </div>
-        
+        <div class="mb-4">
+            <x-toggle label="Notifikasi" :initial="true" />
+        </div>
         <!-- Cards -->
         <div class="grid grid-cols-12 gap-6">
 

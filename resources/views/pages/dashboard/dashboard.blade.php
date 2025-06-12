@@ -22,7 +22,7 @@
                 <button class="btn bg-gray-900 text-gray-100 hover:bg-gray-800 dark:bg-gray-100 dark:text-gray-800 dark:hover:bg-white">
                     <svg class="fill-current shrink-0 xs:hidden" width="16" height="16" viewBox="0 0 16 16">
                         <path d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" />
-                  </svg>
+                    </svg>
                   <span class="max-xs:sr-only">Add View</span>
                 </button>
                 
@@ -68,7 +68,22 @@
                 required
             />
 
-            <x-form.checkbox name="minta_bagian" label="Minta Bagian Daging" wireModel="minta_bagian" />
+            <x-button type="submit">Simpan</x-button>
+
+            <div class="flex flex-wrap items-center gap-4">
+                <x-v-button variant="primary">Primary</x-button>
+                <x-v-button variant="secondary">Secondary</x-button>
+                <x-v-button variant="tertiary">Tertiary</x-button>
+                <x-v-button variant="danger">Danger</x-button>
+                <x-v-button variant="danger-outline">Danger</x-button>
+                <x-v-button variant="success">Success</x-button>
+                <x-v-button variant="success-outline">Success</x-button>
+            </div>
+            <div>
+                <x-v-button variant="danger" disabled>Nonaktif</x-button>
+                <x-v-button variant="success" loading>Proses...</x-button>
+            </div>
+            {{-- <x-form.checkbox name="minta_bagian" label="Minta Bagian Daging" wireModel="minta_bagian" /> --}}
 
         </div>
         <!-- Cards -->

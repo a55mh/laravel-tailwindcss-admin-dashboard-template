@@ -71,21 +71,78 @@
             <x-button type="submit">Simpan</x-button>
 
             <div class="flex flex-wrap items-center gap-4">
-                <x-v-button variant="primary">Primary</x-button>
-                <x-v-button variant="secondary">Secondary</x-button>
-                <x-v-button variant="tertiary">Tertiary</x-button>
-                <x-v-button variant="danger">Danger</x-button>
-                <x-v-button variant="danger-outline">Danger</x-button>
-                <x-v-button variant="success">Success</x-button>
-                <x-v-button variant="success-outline">Success</x-button>
+                <x-vbutton variant="primary">Primary</x-button>
+                <x-vbutton variant="secondary">Secondary</x-button>
+                <x-vbutton variant="tertiary">Tertiary</x-button>
+                <x-vbutton variant="danger">Danger</x-button>
+                <x-vbutton variant="danger-outline">Danger</x-button>
+                <x-vbutton variant="success">Success</x-button>
+                <x-vbutton variant="success-outline">Success</x-button>
             </div>
             <div>
-                <x-v-button variant="danger" disabled>Nonaktif</x-button>
-                <x-v-button variant="success" loading>Proses...</x-button>
+                <x-vbutton variant="danger" disabled>Nonaktif</x-button>
+                <x-vbutton variant="success" loading>Proses...</x-button>
             </div>
             {{-- <x-form.checkbox name="minta_bagian" label="Minta Bagian Daging" wireModel="minta_bagian" /> --}}
 
         </div>
+        <div class="grid grid-cols-1 gap-4 mb-4">
+            <x-alerts.caution message="Kami sedang mengalami lonjakan permintaan." />
+            <x-alerts.success message="Kami sedang mengalami lonjakan permintaan." />
+            <x-alerts.danger message="Kami sedang mengalami lonjakan permintaan." />
+            <x-alerts.info message="Kami sedang mengalami lonjakan permintaan." />
+        </div>
+
+        <div class="grid grid-cols-1 gap-4 mb-4">
+            @livewire('show-modal')
+            <x-modal-success title="Success modal" message="ini isi modal. pakai alpine.js" />
+            <p>Modal dengan pure alpine.js . custom slot untuk isi. feedback cancel dan yes</p>
+            <x-modal-feedback title="Delete Data">
+                <div class="flex space-x-3">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full bg-red-100 text-red-600">
+                        ❌
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800">Delete Data</h3>
+                        <p class="mt-1 text-sm text-gray-600">Are you sure you want to delete this item? This action cannot be undone.</p>
+                    </div>
+                </div>
+            </x-modal-feedback>
+
+            <x-modal-feedback title="Subscribe Newsletter">
+                <div class="flex space-x-3">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 text-blue-600">
+                        <svg class="text-violet-500 fill-current" width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm1 12H7V7h2v5zM8 6c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-800">Subscribe Newsletter</h3>
+                        <p class="mt-1 text-sm text-gray-600">Stay up to date with our latest news by subscribing to our newsletter.</p>
+                    </div>
+                </div>
+            </x-modal-feedback>
+        </div>
+
+        <div class="flex flex-wrap gap-2 mb-4">
+            <x-badge type="violet" label="Working on" />
+            <x-badge type="primary" label="Exciting news" />
+            <x-badge type="product" label="Product" />
+            <x-badge type="announcement" label="Announcement" />
+            <x-badge type="bug" label="Bug Fix" />
+            <x-badge type="customer" label="Customer Stories" />
+            <x-badge type="gray" label="All Stories" />
+            <x-badge label="Default" />
+        </div>
+
+        <div class="ml-10 mb-4">
+            <x-tooltip position="top" label="Tooltip">
+                <div class="text-sm text-gray-700 dark:text-gray-300">
+                    This is a tooltip example. You can use it to provide additional information about an element.
+                </div>
+            </x-tooltip>
+        </div>
+
         <!-- Cards -->
         <div class="grid grid-cols-12 gap-6">
 

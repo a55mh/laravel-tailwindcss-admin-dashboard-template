@@ -26,6 +26,10 @@ Route::redirect('/', 'login');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
+    // my routes
+    Route::get('/donatur', function () {
+        return view('pages.dashboard.donatur');
+    })->name('donatur.index');
     // Route for the getting the data feed
     Route::get('/json-data-feed', [DataFeedController::class, 'getDataFeed'])->name('json_data_feed');
 
